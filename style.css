@@ -1,4 +1,9 @@
-
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
 body {
     margin: 0;
     font-family: 'Courier New', monospace;
@@ -98,4 +103,5 @@ section {
 footer {
     padding: 20px;
     background: rgba(0, 255, 153, 0.05);
+
 }
