@@ -8,7 +8,7 @@ canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
 
 const letters = "01";
-const fontSize = 14;
+const fontSize = 18;
 const columns = canvas.width / fontSize;
 
 const drops = [];
@@ -18,7 +18,7 @@ for (let x = 0; x < columns; x++) {
 }
 
 function draw() {
-    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillStyle = "rgba(0, 0, 0, 0.15)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     ctx.fillStyle = "#00ff99";
@@ -28,14 +28,14 @@ function draw() {
         const text = letters.charAt(Math.floor(Math.random() * letters.length));
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975)
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.99)
             drops[i] = 0;
 
         drops[i]++;
     }
 }
 
-setInterval(draw, 33);
+setInterval(draw, 60);
 function typeEffect() {
     if (index < text.length) {
         document.getElementById("typing").innerHTML += text.charAt(index);
@@ -46,3 +46,4 @@ function typeEffect() {
 
 
 window.onload = typeEffect;
+
